@@ -3,17 +3,25 @@ require 'spec_helper'
 describe "Static pages" do
 
   describe "Home page" do
-    it "should have the content 'Hairology'" do
+
+    it "should have the h1 'Hairology'" do
       visit '/static_pages/home'
-      page.should have_content('Hairology')
+      page.should have_selector('h1', :text => 'Hairology')
     end
 
-    it "should have the title 'Home'" do
+    it "should have the base title" do
       visit '/static_pages/home'
-      page.should have_selector('title', :text => "Home" )
+      page.should have_selector('title',
+                        :text => "Hairology")
+    end
+
+    it "should not have a custom page title" do
+      visit '/static_pages/home'
+      page.should_not have_selector('title', :text => '| Home')
     end
   end
 
+=begin
   describe "Help page" do
     it "should have the content 'Help'" do
       visit '/static_pages/help'
@@ -48,5 +56,5 @@ describe "Static pages" do
       visit '/static_pages/profile'
       page.should have_selector('title', :text => "Profile" )
     end
-  end
+=end
 end
