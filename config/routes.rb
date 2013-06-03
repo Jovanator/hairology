@@ -1,8 +1,9 @@
 Hairology::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/help"
-  get "static_pages/explore"
-  get "static_pages/profile"
+  root to: 'static_pages#home'
+  match '/help', to: 'static_pages#help'
+  match '/explore', to: 'static_pages#explore'
+  match '/profile', to: 'static_pages#profile'
+  match '/contact', to: 'static_pages#contact'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
