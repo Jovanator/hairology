@@ -1,13 +1,12 @@
 Hairology::Application.routes.draw do
   devise_for :users
-
-  get "users/new"
+  resources :users
 
   root to: 'static_pages#home'
 
-  match '/signup', to: 'users#new'
+  match '/signup',  to: 'users#new'
 
-  match '/help', to: 'static_pages#help'
+  match '/help',    to: 'static_pages#help'
   match '/explore', to: 'static_pages#explore'
   match '/profile', to: 'static_pages#profile'
   match '/contact', to: 'static_pages#contact'
