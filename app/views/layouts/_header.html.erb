@@ -6,8 +6,8 @@
         <ul class="nav pull-right">
         <% if user_signed_in? %>
           <li>Logged in as <%= current_user.username %></li>
-          <li><%= link_to "Users", '#' %></li>
-          <li> <%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+          <li> <%= link_to 'Profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+          <li><%= link_to "Users", '/users' %></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
         <% else %>
         <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
