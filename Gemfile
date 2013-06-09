@@ -5,8 +5,6 @@ gem 'bootstrap-sass', '2.1'
 gem 'devise'
 gem 'cancan'
 gem 'faker'
-gem 'will_paginate'
-gem 'bootstrap-will_paginate'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
