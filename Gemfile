@@ -5,6 +5,7 @@ gem 'bootstrap-sass', '2.1'
 gem 'devise'
 gem 'cancan'
 gem 'faker'
+gem 'paperclip', "~> 3.0"
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
