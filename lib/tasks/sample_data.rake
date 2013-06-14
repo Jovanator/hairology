@@ -14,5 +14,7 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
+
+    User.all.each { |user| user.avatar = File.open(Dir.glob(File.join(Rails.root, 'sampleimages', '*')).sample) }
   end
 end
