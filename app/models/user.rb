@@ -31,6 +31,10 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :avatar
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :avatar,
+ #   :styles => {:small => "300x300>", :thumbnail => "80x80#"},
+    :styles => { :medium => "300x300>", :thumb => "100x100>" },
+    :default_url => ActionController::Base.helpers.asset_path('missing_:style.jpg')
+  # has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.jpg"
   # attr_accessible :title, :body
 end
